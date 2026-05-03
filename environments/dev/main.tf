@@ -47,4 +47,5 @@ module "oke_dev" {
   node_subnet_id     = module.network_dev.private_subnet_id
   availability_domain = var.availability_domain
   cost_center        = var.cost_center
+  kubernetes_version = "v1.28.2"
 }
