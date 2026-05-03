@@ -40,17 +40,3 @@ jobs:
         uses: aquasecurity/tfsec-action@v1.0.0
         with:
           working_directory: ./environments/dev
-
-      - name: Setup Infracost
-        if: ${{ secrets.INFRACOST_API_KEY != '' }}
-        uses: infracost/actions/setup@v2
-        with:
-          api_key: ${{ secrets.INFRACOST_API_KEY }}
-
-      - name: Generate Infracost Estimate
-        if: ${{ secrets.INFRACOST_API_KEY != '' }}
-        working-directory: ./environments/dev
-        run: |
-          infracost breakdown --path . \
-            --format json \
-            --out-file /tmp/infracost.json
