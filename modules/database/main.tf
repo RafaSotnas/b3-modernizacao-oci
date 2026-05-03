@@ -32,16 +32,3 @@ resource "oci_database_autonomous_database" "balcao_db" {
     "ManagedBy"   = "Terraform"
   }
 }
-
-resource "oci_database_autonomous_database_backup" "balcao_db_backup" {
-  autonomous_database_id = oci_database_autonomous_database.balcao_db.id
-  display_name           = "backup-balcao-${formatdate("YYYY-MM-DD-hhmm", timestamp())}"
-  backup_type            = "INCREMENTAL"
-
-  depends_on = [oci_database_autonomous_database.balcao_db]
-}
-
-# Opcional: Connection String de acesso
-resource "oci_database_autonomous_db_connection_string" "balcao_db_connection" {
-  autonomous_database_id = oci_database_autonomous_database.balcao_db.id
-}
