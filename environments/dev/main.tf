@@ -49,3 +49,24 @@ module "oke_dev" {
   cost_center        = var.cost_center
   kubernetes_version = "v1.28.2"
 }
+
+# Novo: Módulo para Banco de Dados (Autonomous Database)
+module "database_dev" {
+  source           = "../../modules/database"
+  compartment_id   = var.compartment_id
+  db_name          = var.db_name
+  admin_password   = var.db_admin_password
+  display_name     = "db-balcao-dev"
+  environment      = "dev"
+  cost_center      = var.cost_center
+  workload_type    = "OLTP"
+  cpu_core_count   = 1
+  storage_size_in_gbs = 20
+  is_free_tier     = true
+  is_mtls_connection_required = true
+  license_model    = "LICENSE_INCLUDED"
+  is_data_guard_enabled = false
+  backup_retention_days = 30
+  subnet_id        = module.network_dev.private_subnet_id
+  nsg_ids          = []
+}

@@ -12,3 +12,23 @@ output "container_repository_id" {
   description = "OCID do repositório de imagens OCIR"
   value       = module.ocir_dev.repository_id
 }
+
+output "database_id" {
+  description = "OCID do Autonomous Database"
+  value       = module.database_dev.autonomous_database_id
+}
+
+output "database_name" {
+  description = "Nome do Autonomous Database"
+  value       = module.database_dev.autonomous_database_name
+}
+
+output "database_admin_username" {
+  description = "Usuário admin do banco de dados"
+  value       = module.database_dev.autonomous_database_admin_username
+}
+
+output "database_status" {
+  description = "Status do Autonomous Database"
+  value       = module.database_dev.autonomous_database_status
+}
