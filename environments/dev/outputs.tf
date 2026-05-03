@@ -1,3 +1,9 @@
 output "cluster_id" {
-  value = oci_containerengine_cluster.b3_cluster.id
+  description = "OCID do cluster OKE vindo do módulo"
+  value       = module.oke_dev.cluster_id
+}
+
+output "container_repository_name" {
+  description = "Nome do repositório de imagens"
+  value       = module.ocir_dev.repository_name
 }

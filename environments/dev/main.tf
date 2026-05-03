@@ -44,5 +44,7 @@ module "oke_dev" {
   vcn_id             = module.network_dev.vcn_id
   endpoint_subnet_id = module.network_dev.private_subnet_id
   lb_subnet_id       = module.network_dev.public_subnet_id
+  node_subnet_id     = module.network_dev.private_subnet_id
+  availability_domain = var.availability_domain
   cost_center        = var.cost_center
 }

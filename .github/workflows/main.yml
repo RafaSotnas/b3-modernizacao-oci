@@ -35,3 +35,20 @@ jobs:
       - name: Terraform validate
         working-directory: ./environments/dev
         run: terraform validate
+
+      - name: tfsec
+        uses: aquasecurity/tfsec-action@v1.0.0
+        with:
+          working_directory: ./environments/dev
+
+      - name: Setup Infracost
+        uses: infracost/actions/setup@v2
+        with:
+          api_key: ${{ secrets.INFRACOST_API_KEY }}
+
+      - name: Generate Infracost Estimate
+        working-directory: ./environments/dev
+        run: |
+          infracost breakdown --path . \
+            --format json \
+            --out-file /tmp/infracost.json
