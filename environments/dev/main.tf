@@ -59,7 +59,6 @@ module "database_dev" {
   display_name     = "db-balcao-dev"
   environment      = "dev"
   cost_center      = var.cost_center
-  cpu_core_count   = 1
   data_storage_size_in_tbs = 1
   is_free_tier     = true
   is_auto_scaling_enabled = false

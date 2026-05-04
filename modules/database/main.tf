@@ -2,7 +2,6 @@
 resource "oci_database_autonomous_database" "this" {
   admin_password              = var.admin_password
   compartment_id              = var.compartment_id
-  cpu_core_count              = var.cpu_core_count
   data_storage_size_in_tbs    = var.data_storage_size_in_tbs
   db_name                     = var.db_name
   db_version                  = "19c" # Versão padrão para Autonomous Database

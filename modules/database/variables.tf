@@ -37,12 +37,6 @@ variable "cost_center" {
   description = "Centro de custo para tags de FinOps"
 }
 
-variable "cpu_core_count" {
-  type        = number
-  default     = 1
-  description = "Número de cores CPU para o Autonomous Database"
-}
-
 variable "data_storage_size_in_tbs" {
   type        = number
   default     = 1
