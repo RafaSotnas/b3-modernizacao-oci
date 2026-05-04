@@ -12,7 +12,6 @@ resource "oci_database_autonomous_database" "this" {
   is_mtls_connection_required = var.is_mtls_connection_required
   license_model               = var.license_model
   storage_size_in_gbs         = var.storage_size_in_gbs
-  workload_type               = var.workload_type
 
   # Configuração de rede privada
   subnet_id = var.subnet_id

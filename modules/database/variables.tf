@@ -37,12 +37,6 @@ variable "cost_center" {
   description = "Centro de custo para tags de FinOps"
 }
 
-variable "workload_type" {
-  type        = string
-  default     = "OLTP"
-  description = "Tipo de workload (OLTP ou DW)"
-}
-
 variable "cpu_core_count" {
   type        = number
   default     = 1

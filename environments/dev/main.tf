@@ -59,7 +59,6 @@ module "database_dev" {
   display_name     = "db-balcao-dev"
   environment      = "dev"
   cost_center      = var.cost_center
-  workload_type    = "OLTP"
   cpu_core_count   = 1
   storage_size_in_gbs = 20
   is_free_tier     = true
