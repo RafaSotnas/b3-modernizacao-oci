@@ -62,6 +62,7 @@ module "database_dev" {
   cpu_core_count   = 1
   data_storage_size_in_tbs = 1
   is_free_tier     = true
+  is_auto_scaling_enabled = false
   is_mtls_connection_required = true
   license_model    = "LICENSE_INCLUDED"
   is_data_guard_enabled = false

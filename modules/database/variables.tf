@@ -55,6 +55,12 @@ variable "is_free_tier" {
   description = "Se deve usar Always Free tier"
 }
 
+variable "is_auto_scaling_enabled" {
+  type        = bool
+  default     = false
+  description = "Habilita auto scaling (não suportado no Always Free tier)"
+}
+
 variable "is_mtls_connection_required" {
   type        = bool
   default     = true
