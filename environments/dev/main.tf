@@ -66,7 +66,6 @@ module "database_dev" {
   is_mtls_connection_required = true
   license_model    = "LICENSE_INCLUDED"
   is_data_guard_enabled = false
-  backup_retention_days = 30
   subnet_id        = module.network_dev.private_subnet_id
   nsg_ids          = []
 }

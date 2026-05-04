@@ -24,9 +24,8 @@ resource "oci_database_autonomous_database" "this" {
     "Environment"           = var.environment
   }
 
-  # Configurações de backup
+  # Configurações de backup (desabilitado para Always Free tier)
   backup_config {
-    auto_backup_enabled = true
-    retention_period_in_days = var.backup_retention_days
+    auto_backup_enabled = false
   }
 }
