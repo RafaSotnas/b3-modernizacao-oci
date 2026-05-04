@@ -60,7 +60,7 @@ module "database_dev" {
   environment      = "dev"
   cost_center      = var.cost_center
   cpu_core_count   = 1
-  storage_size_in_gbs = 20
+  data_storage_size_in_tbs = 1
   is_free_tier     = true
   is_mtls_connection_required = true
   license_model    = "LICENSE_INCLUDED"

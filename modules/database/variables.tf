@@ -43,10 +43,10 @@ variable "cpu_core_count" {
   description = "Número de cores CPU para o Autonomous Database"
 }
 
-variable "storage_size_in_gbs" {
+variable "data_storage_size_in_tbs" {
   type        = number
-  default     = 20
-  description = "Tamanho do armazenamento em GB"
+  default     = 1
+  description = "Tamanho do armazenamento em TB (mínimo 1TB para Always Free)"
 }
 
 variable "is_free_tier" {
