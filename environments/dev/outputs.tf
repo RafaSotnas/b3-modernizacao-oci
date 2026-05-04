@@ -8,9 +8,9 @@ output "container_repository_name" {
   value       = module.ocir_dev.repository_name
 }
 
-output "container_repository_id" {
-  description = "OCID do repositório de imagens OCIR"
-  value       = module.ocir_dev.repository_id
+output "container_repository_url" {
+  description = "URL completa para login e push no OCIR (Substitua <tenancy-namespace>)"
+  value       = "sa-saopaulo-1.ocir.io/<tenancy-namespace>/${module.ocir_dev.repository_name}"
 }
 
 output "database_id" {

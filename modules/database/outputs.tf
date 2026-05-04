@@ -1,25 +1,19 @@
 output "autonomous_database_id" {
   description = "OCID do Autonomous Database"
-  value       = oci_database_autonomous_database.balcao_db.id
+  value       = oci_database_autonomous_database.this.id
 }
 
 output "autonomous_database_name" {
   description = "Nome do Autonomous Database"
-  value       = oci_database_autonomous_database.balcao_db.db_name
+  value       = oci_database_autonomous_database.this.db_name
 }
 
 output "autonomous_database_admin_username" {
-  description = "Nome de usuário admin do banco de dados"
-  value       = "admin"
+  description = "Usuário admin do Autonomous Database"
+  value       = oci_database_autonomous_database.this.admin_username
 }
 
 output "autonomous_database_status" {
   description = "Status do Autonomous Database"
-  value       = oci_database_autonomous_database.balcao_db.lifecycle_state
-}
-
-output "autonomous_database_high_connection_string" {
-  description = "Connection string HIGH do banco de dados"
-  value       = try(oci_database_autonomous_database.balcao_db.connection_strings[0].high_connection_string, "N/A")
-  sensitive   = true
+  value       = oci_database_autonomous_database.this.lifecycle_state
 }

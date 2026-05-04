@@ -28,6 +28,11 @@ variable "compartment_id" {
   description = "OCID do compartimento onde os recursos serão criados"
 }
 
+variable "datadog_api_key" {
+  type        = string
+  description = "Chave de API do Datadog para integração de logs"
+}
+
 variable "cost_center" {
   type        = string
   description = "Centro de custo para rastreabilidade dos recursos"
