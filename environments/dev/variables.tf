@@ -57,14 +57,3 @@ variable "notification_topic_id" {
   type        = string
   description = "OCID do tópico de notificação para alertas"
 }
-
-variable "db_name" {
-  type        = string
-  description = "Nome do Autonomous Database (máximo 14 caracteres)"
-}
-
-variable "db_admin_password" {
-  type        = string
-  sensitive   = true
-  description = "Senha do administrador do banco de dados"
-}

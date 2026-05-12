@@ -69,8 +69,6 @@ jobs:
             -var "availability_domain=${{ secrets.OCI_AVAILABILITY_DOMAIN }}" \
             -var "log_group_id=${{ secrets.OCI_LOG_GROUP_ID }}" \
             -var "notification_topic_id=${{ secrets.OCI_NOTIFICATION_TOPIC_ID }}" \
-            -var "db_name=${{ secrets.OCI_DB_NAME }}" \
-            -var "db_admin_password=${{ secrets.OCI_DB_ADMIN_PASSWORD }}" \
             -var "datadog_api_key=${{ secrets.DATADOG_API_KEY }}" \
             -var "cost_center=${{ secrets.OCI_COST_CENTER }}"
 

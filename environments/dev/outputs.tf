@@ -12,23 +12,3 @@ output "container_repository_url" {
   description = "URL completa para login e push no OCIR (Substitua <tenancy-namespace>)"
   value       = "sa-saopaulo-1.ocir.io/<tenancy-namespace>/${module.ocir_dev.repository_name}"
 }
-
-output "database_id" {
-  description = "OCID do Autonomous Database"
-  value       = module.database_dev.autonomous_database_id
-}
-
-output "database_name" {
-  description = "Nome do Autonomous Database"
-  value       = module.database_dev.autonomous_database_name
-}
-
-output "database_admin_username" {
-  description = "Usuário admin do banco de dados"
-  value       = module.database_dev.autonomous_database_admin_username
-}
-
-output "database_status" {
-  description = "Status do Autonomous Database"
-  value       = module.database_dev.autonomous_database_status
-}
