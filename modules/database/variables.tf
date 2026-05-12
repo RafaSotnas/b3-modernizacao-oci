@@ -16,10 +16,6 @@ variable "admin_password" {
   type        = string
   sensitive   = true
   description = "Senha do administrador do banco de dados"
-  validation {
-    condition     = length(var.admin_password) >= 12
-    error_message = "A senha deve ter no mínimo 12 caracteres."
-  }
 }
 
 variable "display_name" {
