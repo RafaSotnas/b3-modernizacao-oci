@@ -50,9 +50,11 @@ jobs:
         env:
           OCI_PRIVATE_KEY: ${{ secrets.OCI_PRIVATE_KEY }}
         run: |
-          echo "$OCI_PRIVATE_KEY" > key.pem
-          # Se o segredo estiver em base64 (não contiver o cabeçalho PEM), decodifica-o
-          if [[ "$OCI_PRIVATE_KEY" != *"BEGIN"* ]]; then echo "$OCI_PRIVATE_KEY" | base64 -d > key.pem; fi
+          # Grava o conteúdo preservando quebras de linha e trata Base64 de forma robusta
+          printf "%s" "$OCI_PRIVATE_KEY" > key.pem
+          if ! grep -q "BEGIN" key.pem; then
+            cat key.pem | base64 -d > key.pem.tmp && mv key.pem.tmp key.pem
+          fi
           chmod 600 key.pem
         shell: bash
 
