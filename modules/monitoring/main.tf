@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    oci = {
+      source  = "oracle/oci"
+      version = ">= 5.0"
+    }
+  }
+}
+
 # Exemplo de configuração de Logs via Service Connector Hub
 # Aqui o conector envia logs de um log group OCI para um tópico de Notifications
 

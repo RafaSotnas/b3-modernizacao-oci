@@ -76,8 +76,7 @@ jobs:
             -var "log_group_id=${{ secrets.OCI_LOG_GROUP_ID }}" \
             -var "notification_topic_id=${{ secrets.OCI_NOTIFICATION_TOPIC_ID }}" \
             -var "datadog_api_key=${{ secrets.DATADOG_API_KEY }}" \
-            -var "cost_center=${{ secrets.OCI_COST_CENTER }}" \
-
+            -var "cost_center=${{ secrets.OCI_COST_CENTER }}"
 
       - name: Generate Infracost JSON
         working-directory: ./environments/dev
@@ -103,6 +102,5 @@ jobs:
           -var "availability_domain=${{ secrets.OCI_AVAILABILITY_DOMAIN }}" \
           -var "log_group_id=${{ secrets.OCI_LOG_GROUP_ID }}" \
           -var "notification_topic_id=${{ secrets.OCI_NOTIFICATION_TOPIC_ID }}" \
-
           -var "datadog_api_key=${{ secrets.DATADOG_API_KEY }}" \
           -var "cost_center=${{ secrets.OCI_COST_CENTER }}"

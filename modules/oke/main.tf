@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    oci = {
+      source  = "oracle/oci"
+      version = ">= 5.0"
+    }
+  }
+}
+
 resource "oci_containerengine_cluster" "b3_cluster" {
   compartment_id = var.compartment_id
 
