@@ -22,9 +22,5 @@ resource "oci_database_autonomous_database" "this" {
     "Operations.Project"    = "Balcao-B3-Modernizacao"
     "Environment"           = var.environment
   }
-
-  # Configurações de backup (desabilitado para Always Free tier)
-  backup_config {
-    auto_backup_enabled = false
-  }
+}
 }
