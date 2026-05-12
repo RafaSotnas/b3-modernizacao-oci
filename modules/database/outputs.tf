@@ -15,5 +15,5 @@ output "autonomous_database_admin_username" {
 
 output "autonomous_database_status" {
   description = "Status do Autonomous Database"
-  value       = oci_database_autonomous_database.this.lifecycle_state
+  value       = oci_database_autonomous_database.this.state
 }
