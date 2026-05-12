@@ -93,20 +93,28 @@ Após o deploy, os seguintes recursos estarão disponíveis:
 - `vcn_id`: OCID da VCN criada
 - `private_subnet_id`: Subnet privada para aplicações
 - `public_subnet_id`: Subnet pública para load balancers
-- `compute_instance_id`: Instância EC2 criada
-- `monitoring_alarm_id`: Alarme de CPU alta
-- `monitoring_connector_id`: Conector de logs
+- `instance_id`: OCID da instância de computação
+- `instance_private_ip`: IP privado da instância
+- `cluster_id`: OCID do cluster OKE
+- `container_repository_name`: Nome do repositório OCIR
+- `container_repository_url`: URL do repositório OCIR
 
 ## 🔧 Módulos Disponíveis
 
 ### VCN Module
-Cria rede virtual com subnets públicas e privadas.
+Cria rede virtual com subnets públicas e privadas, NAT gateway e tabelas de roteamento.
 
 ### Compute Module
-Provisiona instâncias EC2 com configurações otimizadas.
+Provisiona instâncias de computação OCI com Docker pre-instalado.
 
 ### Monitoring Module
-Configura alertas e conectores de log para observabilidade.
+Configura alarmes de CPU e memória com conectores de log via Service Connector Hub.
+
+### OCIR Module
+Cria repositório privado de imagens Docker no Oracle Container Image Registry.
+
+### OKE Module
+Provisiona cluster Kubernetes gerenciado com node pool configurável.
 
 ## ⚠️ Notas Importantes
 
@@ -114,6 +122,42 @@ Configura alertas e conectores de log para observabilidade.
 - Mantenha tags de custo atualizadas para FinOps
 - Teste mudanças em dev antes de aplicar em produção
 - Monitore custos regularmente via OCI Cost Analysis
+
+## 🔐 Configuração de Secrets do GitHub
+
+Para que o workflow do GitHub Actions execute corretamente, configure os seguintes secrets no repositório:
+
+- `OCI_TENANCY_OCID`: OCID da sua tenancy OCI
+- `OCI_USER_OCID`: OCID do usuário OCI
+- `OCI_FINGERPRINT`: Fingerprint da chave API
+- `OCI_PRIVATE_KEY`: Conteúdo da chave privada
+- `OCI_REGION`: Região OCI (ex: sa-saopaulo-1)
+- `OCI_COMPARTMENT_ID`: OCID do compartimento
+- `OCI_IMAGE_ID`: OCID da imagem do sistema operacional
+- `OCI_AVAILABILITY_DOMAIN`: Domínio de disponibilidade
+- `OCI_LOG_GROUP_ID`: OCID do log group
+- `OCI_NOTIFICATION_TOPIC_ID`: OCID do tópico de notificação
+- `DATADOG_API_KEY`: Chave de API do Datadog (opcional)
+- `OCI_COST_CENTER`: Identificador do centro de custo
+- `INFRACOST_API_KEY`: Chave de API do Infracost
+
+## 🔐 Configuração de Secrets do GitHub
+
+Para que o workflow do GitHub Actions execute corretamente, configure os seguintes secrets no repositório:
+
+- `OCI_TENANCY_OCID`: OCID da sua tenancy OCI
+- `OCI_USER_OCID`: OCID do usuário OCI
+- `OCI_FINGERPRINT`: Fingerprint da chave API
+- `OCI_PRIVATE_KEY`: Conteúdo da chave privada (base64 ou texto)
+- `OCI_REGION`: Região OCI (ex: sa-saopaulo-1)
+- `OCI_COMPARTMENT_ID`: OCID do compartimento
+- `OCI_IMAGE_ID`: OCID da imagem do sistema operacional
+- `OCI_AVAILABILITY_DOMAIN`: Domínio de disponibilidade
+- `OCI_LOG_GROUP_ID`: OCID do log group
+- `OCI_NOTIFICATION_TOPIC_ID`: OCID do tópico de notificação
+- `DATADOG_API_KEY`: Chave de API do Datadog (opcional)
+- `OCI_COST_CENTER`: Identificador do centro de custo
+- `INFRACOST_API_KEY`: Chave de API do Infracost (para análise de custos)
 
 ## 🤝 Contribuição
 
