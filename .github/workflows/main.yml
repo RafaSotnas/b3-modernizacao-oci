@@ -47,7 +47,13 @@ jobs:
 
       - name: Create OCI Private Key File
         working-directory: ./environments/dev
-        run: echo "${{ secrets.OCI_PRIVATE_KEY }}" > key.pem
+        env:
+          OCI_PRIVATE_KEY: ${{ secrets.OCI_PRIVATE_KEY }}
+        run: |
+          echo "$OCI_PRIVATE_KEY" > key.pem
+          # Se o segredo estiver em base64 (não contiver o cabeçalho PEM), decodifica-o
+          if [[ "$OCI_PRIVATE_KEY" != *"BEGIN"* ]]; then echo "$OCI_PRIVATE_KEY" | base64 -d > key.pem; fi
+          chmod 600 key.pem
         shell: bash
 
       - name: Setup Infracost
@@ -70,7 +76,9 @@ jobs:
             -var "log_group_id=${{ secrets.OCI_LOG_GROUP_ID }}" \
             -var "notification_topic_id=${{ secrets.OCI_NOTIFICATION_TOPIC_ID }}" \
             -var "datadog_api_key=${{ secrets.DATADOG_API_KEY }}" \
-            -var "cost_center=${{ secrets.OCI_COST_CENTER }}"
+            -var "cost_center=${{ secrets.OCI_COST_CENTER }}" \
+            -var "db_name=${{ secrets.OCI_DB_NAME }}" \
+            -var "db_admin_password=${{ secrets.OCI_DB_ADMIN_PASSWORD }}"
 
       - name: Generate Infracost JSON
         working-directory: ./environments/dev

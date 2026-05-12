@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    oci = {
+      source  = "oracle/oci"
+      version = ">= 5.0"
+    }
+  }
+}
+
 # Exemplo de política restrita para o time de Redes/DevOps
 
 resource "oci_identity_policy" "network_admin_limited" {
