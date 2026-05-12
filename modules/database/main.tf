@@ -1,4 +1,3 @@
-# B3 Modernização OCI - Infraestrutura como Código
 resource "oci_database_autonomous_database" "this" {
   admin_password              = var.admin_password
   compartment_id              = var.compartment_id
@@ -6,7 +5,6 @@ resource "oci_database_autonomous_database" "this" {
   db_name                     = var.db_name
   db_version                  = "19c" # Versão padrão para Autonomous Database
   display_name                = var.display_name
-  is_auto_scaling_enabled     = var.is_auto_scaling_enabled
   is_data_guard_enabled       = var.is_data_guard_enabled
   is_free_tier                = var.is_free_tier
   is_mtls_connection_required = var.is_mtls_connection_required
@@ -22,5 +20,4 @@ resource "oci_database_autonomous_database" "this" {
     "Operations.Project"    = "Balcao-B3-Modernizacao"
     "Environment"           = var.environment
   }
-}
 }
