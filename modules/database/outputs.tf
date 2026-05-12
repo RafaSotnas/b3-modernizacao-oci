@@ -10,7 +10,7 @@ output "autonomous_database_name" {
 
 output "autonomous_database_admin_username" {
   description = "Usuário admin do Autonomous Database"
-  value       = oci_database_autonomous_database.this.admin_username
+  value       = "admin"
 }
 
 output "autonomous_database_status" {
