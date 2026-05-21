@@ -13,11 +13,6 @@ variable "fingerprint" {
   description = "Fingerprint da chave API OCI"
 }
 
-variable "private_key_path" {
-  type        = string
-  description = "Caminho para a chave privada OCI"
-}
-
 variable "region" {
   type        = string
   description = "Região OCI onde os recursos serão criados"
