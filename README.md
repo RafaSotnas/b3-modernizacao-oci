@@ -2,7 +2,7 @@
 
 Este projeto implementa a infraestrutura de modernização dos sistemas legados da B3 utilizando Oracle Cloud Infrastructure (OCI) com Terraform. O foco é em segurança, governança de custos (FinOps) e automação de provisionamento.
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto.
 
 ```
 .
