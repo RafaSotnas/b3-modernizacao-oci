@@ -96,8 +96,6 @@ Após o deploy, os seguintes recursos estarão disponíveis:
 - `instance_id`: OCID da instância de computação
 - `instance_private_ip`: IP privado da instância
 - `cluster_id`: OCID do cluster OKE
-- `container_repository_name`: Nome do repositório OCIR
-- `container_repository_url`: URL do repositório OCIR
 
 ## 🔧 Módulos Disponíveis
 
