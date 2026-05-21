@@ -1,7 +1,6 @@
 tenancy_ocid        = "ocid1.tenancy.oc1..seu_id"
 user_ocid           = "ocid1.user.oc1..seu_id"
 fingerprint         = "xx:xx:xx:xx:xx:xx"
-private_key_path    = "~/.oci/oci_api_key.pem"
 region              = "sa-saopaulo-1"
 compartment_id      = "ocid1.compartment.oc1..seu_id"
 cost_center         = "FIN-SRE-01"
