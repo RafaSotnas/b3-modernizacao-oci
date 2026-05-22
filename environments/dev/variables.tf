@@ -53,7 +53,3 @@ variable "notification_topic_id" {
   description = "OCID do tópico de notificação para alertas"
 }
 
-variable "private_key_content" {
-  type      = string
-  sensitive = true
-}
